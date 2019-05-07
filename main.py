@@ -1,17 +1,34 @@
 # main.py
 import tkinter
-from Window import Window, MainWindow, SubWindow
+import Window
+
+class func:
+    def func1():
+        print(1)
+    def func2():
+        print(2)
+    def func3():
+        print(3)
+    def func4():
+        print(4)
+    def func5():
+        print(5)
+    def func6():
+        print(6)
+    # functionList = [func1(), func2(), func3(), func4(), func5(), func6()]
 
 # main処理の関数
 def main():
     application = tkinter.Tk()
     application.title("mainWindow")
-    window = MainWindow(application)
+    window = Window.MainWindow(application)
     application.protocol("WM_DELETE_WINDOW", window.quit)
     application.mainloop()
 
 if __name__ == '__main__':
     main()
+
+
 
 
 # def main():
