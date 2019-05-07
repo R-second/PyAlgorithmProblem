@@ -1,11 +1,12 @@
-# Window.pyw
+# WindowGUI.py
 import tkinter
 from main import func
+import Function
 
 # 上位クラスWindow（MainWindowとSubWindowを継承させる）
 class Window(tkinter.Frame):
 
-    def __init__(self,parent):
+    def __init__(self, parent):
         super(Window, self).__init__(parent)
         self.parent = parent
         self.grid(row=0, column=0)
@@ -13,6 +14,7 @@ class Window(tkinter.Frame):
     # windowを正常に閉じるための関数 quit
     def quit(self, event=None):
         self.parent.destroy()
+
 
 # Windowクラスを継承したMainWindowクラス
 class MainWindow(Window):
@@ -44,16 +46,25 @@ class MainWindow(Window):
         application2.protocol("WM_DELETE_WINDOW", subWindow.quit)
         application2.mainloop()
 
-    
-class SubWindow(Window):
+class SubWindow():
     def __init__(self, parent, num):
-        super(SubWindow, self).__init__(parent)
+        super(Function, self).__init__(parent)
         
+        # Widgets # 実行するプログラムを表示するラベルを用意
         txt="プログラム"+str(num)+"を実行します。"
         self.lblTitle = tkinter.Label(self, text=txt, anchor=tkinter.W, width=20)
-
         self.lblTitle.grid(row=0, column=0, padx=2, pady=2, sticky=tkinter.W)
 
-        # func.functionList[num]()
+        func.functionList[num].gui()
+        func.functionList[num].main()
 
-        
+
+# Windowクラスを継承したFunctionクラス（関数はすべてこれを継承する）
+class Function(SubWindow):
+    @classmethod    
+    def gui(self):
+        pass
+
+    @classmethod
+    def main(self):
+        pass
