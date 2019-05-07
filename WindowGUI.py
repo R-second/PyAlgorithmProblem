@@ -61,10 +61,12 @@ class SubWindow():
 
 # Windowクラスを継承したFunctionクラス（関数はすべてこれを継承する）
 class Function(SubWindow):
-    @classmethod    
+    @classmethod
+    @abstractmethod   
     def gui(self):
         pass
 
     @classmethod
+    @abstractmethod
     def main(self):
         pass
