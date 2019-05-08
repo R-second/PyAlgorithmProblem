@@ -1,6 +1,5 @@
 # WindowGUI.py
 import tkinter
-# from main import func
 from Function import FunctionList
 
 # 上位クラスWindow（MainWindowとSubWindowを継承させる）
@@ -24,7 +23,7 @@ class MainWindow(Window):
 
         #Widgets
         #ボタンを６つ用意する（クリックされたら、subWindow関数の引数にボタン番を渡してを実行）
-        self.btn1 = tkinter.Button(self, text="1. 素数判定＋素因数分解", command=lambda:self.subWindow(0))
+        self.btn1 = tkinter.Button(self, text="1. 素数判定", command=lambda:self.subWindow(0))
         self.btn2 = tkinter.Button(self, text="2. フィボナッチ数列の出力", command=lambda:self.subWindow(1))
         self.btn3 = tkinter.Button(self, text="3. 最大公約数出力", command=lambda:self.subWindow(2))
         self.btn4 = tkinter.Button(self, text="4. 最大値/最小値判定", command=lambda:self.subWindow(3))
