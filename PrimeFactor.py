@@ -2,13 +2,14 @@
 # 入力が素数かどうかを判定し、素因数分解の結果を返すプログラム
 
 import tkinter
-from WindowGUI import Function
+from Function import Function
 
-class PrimeFactor(Function):
-    def gui(self):
-        self.txtPrice = tkinter.Entry(self, width=22)
-        self.txtPrice.grid(row=1, column=0, padx=2, pady=2, sticky=tkinter.W)
-    
-    def main(self):
-        print("1")
+# class PrimeFactor(Function):
+#     def __init__(self, parent):
+#         super(PrimeFactor, self).__init__(parent)
+        
+#         # Widgets # 実行するプログラムを表示するラベルを用意
+#         txt="プログラム"+"を実行します。"
+#         self.lblTitle = tkinter.Label(self, text=txt, anchor=tkinter.W, width=20)
+#         self.lblTitle.grid(row=0, column=0, padx=2, pady=2, sticky=tkinter.W)
 

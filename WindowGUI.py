@@ -1,7 +1,7 @@
 # WindowGUI.py
 import tkinter
-from main import func
-import Function
+# from main import func
+from Function import FunctionList
 
 # 上位クラスWindow（MainWindowとSubWindowを継承させる）
 class Window(tkinter.Frame):
@@ -40,33 +40,4 @@ class MainWindow(Window):
 
     # ボタンがクリックされた時の処理を実行するsubWindow関数
     def subWindow(self, num):
-        application2 = tkinter.Tk()
-        application2.title("subWindow")
-        subWindow = SubWindow(application2, num) # SubWindowクラスをsubWindow変数に代入
-        application2.protocol("WM_DELETE_WINDOW", subWindow.quit)
-        application2.mainloop()
-
-class SubWindow():
-    def __init__(self, parent, num):
-        super(Function, self).__init__(parent)
-        
-        # Widgets # 実行するプログラムを表示するラベルを用意
-        txt="プログラム"+str(num)+"を実行します。"
-        self.lblTitle = tkinter.Label(self, text=txt, anchor=tkinter.W, width=20)
-        self.lblTitle.grid(row=0, column=0, padx=2, pady=2, sticky=tkinter.W)
-
-        func.functionList[num].gui()
-        func.functionList[num].main()
-
-
-# Windowクラスを継承したFunctionクラス（関数はすべてこれを継承する）
-class Function(SubWindow):
-    @classmethod
-    @abstractmethod   
-    def gui(self):
-        pass
-
-    @classmethod
-    @abstractmethod
-    def main(self):
-        pass
+        FunctionList.functionMain(num)
