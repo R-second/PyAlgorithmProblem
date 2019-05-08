@@ -1,6 +1,6 @@
 # WindowGUI.py
 import tkinter
-from Function import FunctionList
+from FunctionList import FunctionList
 
 # 上位クラスWindow（MainWindowとSubWindowを継承させる）
 class Window(tkinter.Frame):
