@@ -19,3 +19,9 @@ class Function(tkinter.Frame):
     # windowを正常に閉じるための関数 quit
     def quit(self, event=None):
         self.parent.destroy()
+    
+    def executeGUI(self):
+        pass
+    
+    def execute(self):
+        pass
