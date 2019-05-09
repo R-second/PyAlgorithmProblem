@@ -46,5 +46,4 @@ class MainWindow(Window):
 
     # ボタンがクリックされた時の処理を実行するsubWindow関数
     def subWindow(self, num):
-        print(num)
         FunctionList.functionMain(num)

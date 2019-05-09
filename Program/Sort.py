@@ -1,15 +1,15 @@
-# MaxMin.py
+# Sort.py
 
 import tkinter
 import FunctionMain
 
-class MaxMin(FunctionMain.Function):
+class Sort(FunctionMain.Function):
     def __init__(self, parent):
-        super(MaxMin, self).__init__(parent)
+        super(Sort, self).__init__(parent)
 
         # Widgets
         # ラベル, 入力ボックス, 決定ボタン, 表示ラベル 
-        self.lblNum = tkinter.Label(self, text="右の枠に数字を入力してください（10個全てに入力する必要はありません。）", anchor=tkinter.W)
+        self.lblNum = tkinter.Label(self, text="右の枠に数字を入力してください（10個全て入力する必要はありません。）", anchor=tkinter.W)
 
         # 10個の入力ボックスを生成
         self.numEntry = []
@@ -34,11 +34,10 @@ class MaxMin(FunctionMain.Function):
         # 10個の値を取得
         num = []
         for i in range(0, 10):
-            num.append(self.numEntry[i].get())
+            num.append(int(self.numEntry[i].get()))
         
         # execute関数を実行
-        num = self.execute(num)
-        txt = str(num)
+        txt = self.execute(num)
 
         # txt = "半角の数字を入力してください。"
         
@@ -47,15 +46,24 @@ class MaxMin(FunctionMain.Function):
 
 
 
-    # 最大値取得の関数
+    # 昇順に並べ替えの関数
     def execute(self, list1):
-        # 仮の最大値tmpMax
-        tmpMax = list1[0]
+        elem = len(list1)  # 要素数を取得
 
-        for i in range(1, 10):
-            if tmpMax < list1[i]:
-                tmpMax = list1[i]
+        # topに"最小値-1"を格納してループ
+        for top in range(0, elem-1):
+            # top以下で最小値を探し、topの位置に格納
+            for i in range(elem-1, top-1, -1):
+                if list1[i] < list1[i-1]:
+                    tmp = list1[i]
+                    list1[i] = list1[i-1]
+                    list1[i-1] = tmp
         
-        return tmpMax
+        txt = ""
+        for i in range(0, elem):
+            txt = txt + str(list1[i]) + ", "
+        
+        return txt
+
 
 
