@@ -8,10 +8,10 @@
 - ソート
 - 万年カレンダー
 
-プログラムは[programフォルダ][https://github.com/R-second/PyAlgorithmProblem/tree/master/Program]に全て入っています。
+プログラムは[programフォルダ](https://github.com/R-second/PyAlgorithmProblem/tree/master/Program)に全て入っています。
 Main部分のプログラムの解説は[README-main.md](https://github.com/R-second/PyAlgorithmProblem/blob/master/README-main.md)に示し、各アルゴリズムの解説は[README-algorithm.md](https://github.com/R-second/PyAlgorithmProblem/blob/master/README-algorithm.md)に示しています。
 
-プログラムを動かしたい時は、[programフォルダ]ごと、ダウンロードし、 `python main.py` を実行してください。
+プログラムを動かしたい時は、[programフォルダ](https://github.com/R-second/PyAlgorithmProblem/tree/master/Program)ごと、ダウンロードし、 `python main.py` を実行してください。
 
 全てpythonで実装しており、多少のオブジェクト指向も取り入れています。  
 1年生のアルゴリズム問題回答用 ＋ 自分のスキル確認用 ＋ gitHubコマンド練習用 として作成しました。  
