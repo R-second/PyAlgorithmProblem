@@ -37,7 +37,7 @@ class Calendar(FunctionMain.Function):
         # execute関数を実行し、txtに代入
         cal = self.execute(year, month)
         
-        # 結果表示ラベルにtxtを表示
+        # 結果表示ラベルを設定
         elem = len(cal)
         self.lblResult2 = []
         for i in range(0, elem):
@@ -45,19 +45,24 @@ class Calendar(FunctionMain.Function):
             self.lblResult2[i].grid(row=4+i, column=1, padx=2, pady=2, sticky=tkinter.W)
 
 
+    # 各月の日付を定義
     month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     # 最大公約数取得の関数
     def execute(self, y, m):
+
+        # 閏年なら、２月を29日に変更
         if self.leapYear(y) == 1:
             self.month[2] = 29
-        newDay = self.newYearDay(y)
-        day = self.firstDay(newDay, m)
+
+        newDay = self.newYearDay(y)  # y年元日の曜日を取得
+        day = self.firstDay(newDay, m) # newDay曜日の年のm月目の初日の曜日を取得
         txt = []
         txt.append("      SUN          MON        TUE       WED       THU       FRI       SAT")
         txt1 = "            "
         for i in range(0, day):
-            txt1 = txt1 + "            "
+            txt1 = txt1 + "            "  # 前月を埋める最初のスペース
+        
         for i in range(1, self.month[m]+1):
             if i < 10:
                 txt1 = txt1 + str(i).rjust(4) + "         "
@@ -72,8 +77,9 @@ class Calendar(FunctionMain.Function):
         return txt
 
 
+    # 閏年か判定
     def leapYear(self, y):
-        flag = 0
+        flag = 0  #閏年と仮定
         if y % 4 == 0:
             flag = 1
         if y % 100 == 0:
@@ -82,6 +88,8 @@ class Calendar(FunctionMain.Function):
             flag = 1
         return flag
 
+
+    # y年の元日の曜日を取得
     def newYearDay(self, y):
         d = 1
         for i in range(1, y):
@@ -89,6 +97,7 @@ class Calendar(FunctionMain.Function):
         d = d % 7
         return d
 
+    # 元日の曜日がdのとき、m月1日の曜日を取得
     def firstDay(self, d, m):
         t = d
         for i in range(1, m):
