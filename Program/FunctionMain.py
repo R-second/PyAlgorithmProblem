@@ -20,8 +20,10 @@ class Function(tkinter.Frame):
     def quit(self, event=None):
         self.parent.destroy()
     
+    # GUIを定義するexecuteGUI（継承後にオーバーライド）
     def executeGUI(self):
         pass
-    
+
+    # メインの処理を実行するexecute（継承後にオーバーライド）
     def execute(self):
         pass
