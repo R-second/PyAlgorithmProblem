@@ -1,1 +1,1 @@
-# PyAlgorithmProblem プログラムアルゴリズム部分の解説
+# PyAlgorithmProblem プログラムAlgorithm部分の解説

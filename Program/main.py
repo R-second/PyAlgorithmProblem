@@ -1,7 +1,6 @@
 # main.py
 import tkinter
 import WindowGUI
-import PrimeFactor
 
 # main処理の関数
 def main():
