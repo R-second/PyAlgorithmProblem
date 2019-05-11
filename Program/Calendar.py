@@ -48,7 +48,7 @@ class Calendar(FunctionMain.Function):
     # 各月の日付を定義
     month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
-    # 最大公約数取得の関数
+    # カレンダー取得の関数
     def execute(self, y, m):
 
         # 閏年なら、２月を29日に変更
@@ -79,7 +79,7 @@ class Calendar(FunctionMain.Function):
 
     # 閏年か判定
     def leapYear(self, y):
-        flag = 0  #閏年と仮定
+        flag = 0  #閏年でないと仮定
         if y % 4 == 0:
             flag = 1
         if y % 100 == 0:
