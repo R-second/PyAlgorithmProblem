@@ -9,7 +9,7 @@ class MaxMin(FunctionMain.Function):
 
         # Widgets
         # ラベル, 入力ボックス, 決定ボタン, 表示ラベル 
-        self.lblNum = tkinter.Label(self, text="右の枠に数字を入力してください（10個全てに入力する必要はありません。）", anchor=tkinter.W)
+        self.lblNum = tkinter.Label(self, text="右の枠に数字を入力してください", anchor=tkinter.W)
 
         # 10個の入力ボックスを生成
         self.numEntry = []

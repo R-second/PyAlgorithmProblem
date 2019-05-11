@@ -34,12 +34,14 @@ class Sort(FunctionMain.Function):
         # 10個の値を取得
         num = []
         for i in range(0, 10):
-            num.append(int(self.numEntry[i].get()))
-        
-        # execute関数を実行
-        txt = self.execute(num)
+            entry = self.numEntry[i].get().strip()
+            if entry !=  "":
+                entry = int(entry)
+                num.append(entry)
+                print(entry)
 
-        # txt = "半角の数字を入力してください。"
+        print(num)
+        txt = self.execute(num)
         
         self.lblResult2 = tkinter.Label(self, text=txt, anchor=tkinter.W)
         self.lblResult2.grid(row=12, column=1, padx=2, pady=2, sticky=tkinter.W)
