@@ -24,9 +24,6 @@ class MainWindow(Window):
         self.btn = []
         #Widgets
         #ボタンを６つ用意する（クリックされたら、subWindow関数の引数にボタン番号を渡して実行）
-        # for i in range(0, 6):
-        #     self.btn.append(tkinter.Button(self, text=FunctionList.functionList[i], command=lambda:self.subWindow(i)))
-        #     self.btn[i].grid(row=i, column=0, padx=2, pady=2, sticky=tkinter.W)
         self.btn1 = tkinter.Button(self, text="1. 素数判定", command=lambda:self.subWindow(0))
         self.btn2 = tkinter.Button(self, text="2. フィボナッチ数列の出力", command=lambda:self.subWindow(1))
         self.btn3 = tkinter.Button(self, text="3. 最大公約数出力", command=lambda:self.subWindow(2))
@@ -35,8 +32,6 @@ class MainWindow(Window):
         self.btn6 = tkinter.Button(self, text="6. 万年カレンダー", command=lambda:self.subWindow(5))
 
         #Layout
-        # for i in range(0, 6):
-        #     self.btn[i].grid(row=i, column=0, padx=2, pady=2, sticky=tkinter.W)
         self.btn1.grid(row=0, column=0, padx=2, pady=2, sticky=tkinter.W)
         self.btn2.grid(row=1, column=0, padx=2, pady=2, sticky=tkinter.W)
         self.btn3.grid(row=2, column=0, padx=2, pady=2, sticky=tkinter.W)

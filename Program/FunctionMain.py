@@ -3,7 +3,7 @@
 import tkinter
 
 
-# 上位クラスFunctionクラス（関数はすべてこれを継承する）
+# 上位クラスFunctionクラス（アルゴリズムはすべてこれを継承する）
 class Function(tkinter.Frame):
 
     def __init__(self, parent):
