@@ -39,7 +39,8 @@ class Gcd(FunctionMain.Function):
         txt = str(num)
         
         # 結果表示ラベルにtxtを表示
-        self.lblResult2 = tkinter.Label(self, text=txt, anchor=tkinter.W)
+        self.lblResult2 = tkinter.Label(self, anchor=tkinter.W)
+        self.lblResult2.configure(text=txt)
         self.lblResult2.grid(row=4, column=1, padx=2, pady=2, sticky=tkinter.W)
 
 
