@@ -38,9 +38,7 @@ class Sort(FunctionMain.Function):
             if entry !=  "":
                 entry = int(entry)
                 num.append(entry)
-                print(entry)
 
-        print(num)
         txt = self.execute(num)
         
         self.lblResult2 = tkinter.Label(self, text=txt, anchor=tkinter.W)

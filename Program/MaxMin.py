@@ -34,8 +34,11 @@ class MaxMin(FunctionMain.Function):
         # 10個の値を取得
         num = []
         for i in range(0, 10):
-            num.append(self.numEntry[i].get())
-        
+            entry = self.numEntry[i].get().strip()
+            if entry !=  "":
+                entry = int(entry)
+                num.append(entry)
+
         # execute関数を実行
         num = self.execute(num)
         txt = str(num)
